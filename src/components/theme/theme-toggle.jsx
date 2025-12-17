@@ -1,20 +1,9 @@
 "use client"
 
 import * as React from "react"
-import { Moon, Sun, Palette, PaletteIcon } from "lucide-react"
+import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
-
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuTrigger,
-    DropdownMenuSub,
-    DropdownMenuSubTrigger,
-    DropdownMenuSubContent,
-} from "@/components/ui/dropdown-menu"
-
-import { Button } from "@/components/ui/button"
+import { Switch } from "@/components/ui/switch"
 import {
     Tooltip,
     TooltipContent,
@@ -32,9 +21,11 @@ export function ThemeToggle() {
 
     if (!mounted) {
         return (
-            <Button variant="outline" size="icon" disabled>
-                <Palette className="h-4 w-4" />
-            </Button>
+            <div className="flex items-center space-x-2">
+                <Sun className="h-4 w-4" />
+                <Switch disabled />
+                <Moon className="h-4 w-4" />
+            </div>
         )
     }
 
@@ -43,46 +34,38 @@ export function ThemeToggle() {
         setTheme(value)
     }
 
+    const toggleTheme = () => {
+        const newTheme = theme === "light" ? "dark" : "light"
+        setThemeAndSave(newTheme)
+    }
 
     const getThemeIcon = () => {
-        switch (theme) {
-            case "light": return <Sun className="h-4 w-4" />
-            case "dark": return <Moon className="h-4 w-4" />
-            default: return <Sun className="h-4 w-4" />
+        if (theme === "dark") {
+            return <Moon className="h-4 w-4" />
         }
+        return <Sun className="h-4 w-4" />
     }
 
     const getThemeName = () => {
-        switch (theme) {
-            case "light": return "Claro"
-            case "dark": return "Oscuro"
-            default: return "Claro"
+        if (theme === "dark") {
+            return "Oscuro"
         }
+        return "Claro"
     }
 
     return (
         <TooltipProvider>
             <Tooltip>
                 <TooltipTrigger asChild>
-                    <DropdownMenu>
-                        <DropdownMenuTrigger asChild>
-                            <Button variant="outline" size="icon" className="relative">
-                                {getThemeIcon()}
-                                <span className="sr-only">Cambiar tema</span>
-                            </Button>
-                        </DropdownMenuTrigger>
-                        <DropdownMenuContent align="end">
-                            <DropdownMenuItem onClick={() => setThemeAndSave("light")} className="flex gap-2">
-                                <Sun className="h-4 w-4" />
-                                Claro
-                            </DropdownMenuItem>
-
-                            <DropdownMenuItem onClick={() => setThemeAndSave("dark")} className="flex gap-2">
-                                <Moon className="h-4 w-4" />
-                                Oscuro
-                            </DropdownMenuItem>
-                        </DropdownMenuContent>
-                    </DropdownMenu>
+                    <div className="flex items-center space-x-2">
+                        <Sun className="h-4 w-4" />
+                        <Switch
+                            checked={theme === "dark"}
+                            onCheckedChange={toggleTheme}
+                            aria-label="Cambiar tema"
+                        />
+                        <Moon className="h-4 w-4" />
+                    </div>
                 </TooltipTrigger>
                 <TooltipContent>
                     <p>Tema actual: {getThemeName()}</p>
