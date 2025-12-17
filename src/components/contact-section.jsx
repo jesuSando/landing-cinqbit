@@ -5,9 +5,9 @@ import { ArrowRight, Mail } from "lucide-react"
 export default function ContactSection() {
     return (
         <section id="contact" className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32">
-            <Card className="bg-foreground text-muted border-0 overflow-hidden relative">
-                <div className="absolute inset-0 bg-grid-white/[0.05] [mask-image:linear-gradient(0deg,white,transparent)]" />
-                <div className="relative px-6 py-16 sm:px-12 sm:py-24 text-center">
+            <Card className="bg-foreground text-muted border-0 overflow-hidden">
+                <div className="bg-grid-white/[0.05] [mask-image:linear-gradient(0deg,white,transparent)]" />
+                <div className="px-6 py-16 sm:px-12 sm:py-24 text-center">
                     <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-balance">
                         ¿Listo para comenzar tu proyecto?
                     </h2>
