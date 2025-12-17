@@ -29,7 +29,7 @@ export default function HeroSection() {
 
                 </Link>
 
-                <Button size="lg" variant="outline" className="h-12 px-8 text-base w-full sm:w-auto bg-transparent items-center cursor-pointer">
+                <Button size="lg" variant="outline" className="h-12 px-8 text-base w-full bg-background hover:bg-foreground text-foreground sm:w-auto cursor-pointer">
                     Contacto
                     <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
