@@ -6,7 +6,7 @@ export default function StatsSection() {
             description: "Nada de plantillas genéricas",
         },
         {
-            value: "Startup-friendly",
+            value: "Startup friendly",
             label: "Enfoque",
             description: "Pensado para emprendedores",
         },
@@ -16,7 +16,7 @@ export default function StatsSection() {
             description: "Comunicación clara en cada etapa",
         },
         {
-            value: "Full-Stack",
+            value: "Full Stack",
             label: "Desarrollo",
             description: "Frontend, backend y despliegue",
         },

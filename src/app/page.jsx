@@ -1,6 +1,7 @@
 import Header from "@/components/app-navbar"
 import HeroSection from "@/components/hero-section"
 import StatsSection from "@/components/stats-section"
+import ServicesSection from "@/components/services-section"
 
 export default function HomePage() {
   return(
@@ -8,6 +9,7 @@ export default function HomePage() {
       <Header />
       <HeroSection />
       <StatsSection />
+      <ServicesSection />
     </main>
   )
 }
