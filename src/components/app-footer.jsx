@@ -12,7 +12,7 @@ export default function Footer() {
                             <span className="text-lg font-semibold">CinqBit</span>
                         </div>
                         <p className="text-sm text-muted-foreground leading-relaxed">
-                            Desarrollamos software empresarial de calidad que impulsa el crecimiento de tu negocio.
+                            Innovación y soporte a tu alcance.
                         </p>
                     </div>
 
@@ -85,7 +85,7 @@ export default function Footer() {
                 </div>
 
                 <div className="pt-8 border-t border-border/40 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-                    <p>&copy; 2025 TechSolutions. Todos los derechos reservados.</p>
+                    <p>&copy; 2025 CinqBit. Todos los derechos reservados.</p>
                     <div className="flex gap-6">
                         <Link href="#" className="hover:text-foreground transition-colors">
                             Privacidad
