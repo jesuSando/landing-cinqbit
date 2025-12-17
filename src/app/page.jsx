@@ -1,9 +1,16 @@
-import { ThemeToggle } from "@/components/theme/theme-toggle"
+import Header from "@/components/app-navbar"
 
 export default function HomePage() {
   return(
-    <div>
-      <ThemeToggle></ThemeToggle>
-    </div>
+    <main className="min-h-screen pt-16">
+      <Header />
+      <div id="link1" className="min-h-screen">
+        hoal
+      </div>
+
+      <div id="link1" className="min-h-screen">
+        hoal
+      </div>
+    </main>
   )
 }
